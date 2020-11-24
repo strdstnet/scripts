@@ -1,0 +1,16 @@
+{
+  "name": "protocol-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@strdst/utils.nbt": "^1.0.2",
+    "@strdstnet/utils.binary": "^1.0.1"
+  },
+  "devDependencies": {
+    "@strdst/tsconfig": "^1.0.3",
+    "@types/node": "^14.14.9",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}
