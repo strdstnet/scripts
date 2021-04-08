@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import { BinaryData } from '@strdstnet/utils.binary'
 import { CompoundTag, IntTag, StringTag } from '@strdst/utils.nbt'
-import blockIds from './block_id_map.json'
 
 interface IBlockState {
   name: string,
@@ -30,7 +29,9 @@ type IPMMPState = {
   version: IntTag,
 }
 
-const file = fs.readFileSync(path.join(__dirname, 'block_states.nbt'))
+const blockIds = JSON.parse(fs.readFileSync(path.join(__dirname, 'block_id_map.json')).toString())
+
+const file = fs.readFileSync(path.join(__dirname, 'canonical_block_states.nbt'))
 const data = new BinaryData(file)
 
 const conversionFile = fs.readFileSync(path.join(__dirname, 'r12_to_current_block_map.bin'))
