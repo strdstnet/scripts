@@ -31,6 +31,7 @@ function clean() {
 
     [GRM, 'block_states.json'],
     [GRM, 'item_id_map.json'],
+    [GRM, 'r16_to_current_item_map.json'],
     // [GRM, 'items.json'],
     [GRM, 'block_mapping.json'],
     [GRM, 'item_mapping.json'],
@@ -64,6 +65,7 @@ async function genRuntimeMap() {
   moveFile(path.join(GBS, fileName), path.join(GRM, fileName))
 
   await downloadFile('item_id_map.json', GRM)
+  await downloadFile('r16_to_current_item_map.json', GRM)
 
   await import('../generate-runtime-map/run')
 
